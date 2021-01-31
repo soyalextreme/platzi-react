@@ -38,3 +38,8 @@ body {
     flex-direction: column;
   }
 }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
