@@ -14,7 +14,17 @@ const App = () => (
     <div className="app">
         <Header />
         <Search />
-        <Categories>
+        <Categories titleCategory="Mi Lista">
+            <Carousel>
+                <CarouselItem />
+            </Carousel>
+        </Categories>
+        <Categories titleCategory="Originales Platzi">
+            <Carousel>
+                <CarouselItem />
+            </Carousel>
+        </Categories>
+        <Categories titleCategory="Tendencias">
             <Carousel>
                 <CarouselItem />
             </Carousel>

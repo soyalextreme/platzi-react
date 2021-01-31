@@ -1,31 +1,13 @@
+@import "./Vars.scss";
+
 body {
-    margin: 0;
-    font-family: 'Muli', sans-serif;
-    background: #8f57fd;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-
-
-  .input {
-  background-color: rgba(255,255,255,0.1);
-  border: 2px solid white;
-  border-radius: 25px;
-  color: white;
-  font-family: 'Muli', sans-serif;
-  font-size: 16px;
-  height: 50px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 0px 20px;
-  width: 70%;
+  margin: 0;
+  font-family: $theme-font;
+  background: $main-color;
 }
 
-::placeholder {
-  color: white;
+* {
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 600px) {
@@ -38,7 +20,6 @@ body {
     flex-direction: column;
   }
 }
-
 
 ::-webkit-scrollbar {
   display: none;
