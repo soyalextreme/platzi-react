@@ -9,24 +9,14 @@ import Footer from "../components/Footer";
 // styles
 import "../assets/styles/App.scss";
 
+// hooks
 
+import useInitialState from "../hooks/useInitialState";
 
 const App = () => {
 
-    useEffect(() => {
-
-        const fetchVideos = () => {
-            const API = "http://localhost:3000/initalState";
-            fetch(API).then(response => response.json()).then(data => setVideos(data));
-        }
-
-        fetchVideos();
-
-    }, [])
-
-    
-    const [videos, setVideos] = useState({mylist: [], originals: [], trends: []});
-
+    const initialState = useInitialState();
+    const { mylist, trends, originals } = initialState;
     
     return (
     <div className="app">
@@ -34,17 +24,17 @@ const App = () => {
         <Search />
         <Categories titleCategory="Mi Lista">
             <Carousel>
-                {videos.mylist.length > 0 && videos.mylist.map( data => <CarouselItem key={data.id} {...data} />) }
+                {mylist.length > 0 && mylist.map( data => <CarouselItem key={data.id} {...data} />) }
             </Carousel>
         </Categories>
         <Categories titleCategory="Originales Platzi">
             <Carousel>
-                {videos.originals.length > 0 && videos.originals.map( data => <CarouselItem key={data.id} {...data} />)}
+                {originals.length > 0 && originals.map( data => <CarouselItem key={data.id} {...data} />)}
             </Carousel>
         </Categories>
         <Categories titleCategory="Tendencias">
             <Carousel>
-                {videos.trends.length > 0 && videos.trends.map( data => <CarouselItem key={data.id} {...data} />)}
+                {trends.length > 0 && trends.map( data => <CarouselItem key={data.id} {...data} />)}
             </Carousel>
         </Categories>
         <Footer />
